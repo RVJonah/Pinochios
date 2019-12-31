@@ -101,7 +101,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+# https://docs.djangoproject.com/en/2.0/howto/static-files/
 USE_L10N = True
 
 USE_TZ = True
@@ -112,7 +112,7 @@ USE_TZ = True
 
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_URL = 'www.david-barker-pinochios.herokuapp.com/static/'
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
