@@ -1,0 +1,52 @@
+/* Element Tag CSS */
+
+article {
+  width: 80%;
+  margin: 1% auto;
+}
+fieldset {
+    border-radius: 2em;
+}
+form {
+    margin: 2% auto;
+    width: 80%;
+    text-align: justify;
+}
+form input {
+    margin: 0.5% 0;
+    width: 40%;
+    border: 1px solid black;
+}
+form div {
+    text-align: center;
+    margin: 1%;
+}
+h2 {
+    text-align: center;
+}
+legend {
+    margin-left: 2em;
+}
+label {
+    display: inline-block;
+    margin: 0.5% auto 1% auto;
+    width: 45%;
+    text-align: right;
+    line-height: 150%;
+}
+
+/* ID CSS */
+
+#comment {
+  width: 80%;
+  margin: 1% auto;
+  line-height: 150%;
+  text-align: center;
+  display: none;
+  border: 2px solid rgb(205, 33, 42);
+  background-color:  rgb(0, 140, 69);
+  color: white;
+}
+#comment p {
+    margin: 0;
+}

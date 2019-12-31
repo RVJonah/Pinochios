@@ -1,0 +1,52 @@
+/* Element Tag CSS */
+
+button {
+  margin: 1%;
+}
+h2 {
+  text-align: center;
+  margin: 1% auto;
+}
+section {
+  width: 80%;
+  margin: 1% auto;
+}
+
+/* Class CSS */
+
+.buttonDiv {
+  text-align:center;
+}
+
+/* ID CSS */
+
+#linkDiv {
+  margin: 1% auto;
+  text-align: right;
+}
+#linkDiv a{
+  color: black
+}
+#linkDiv a:visited{
+  color: black
+}
+#noOrders {
+  margin: 1% auto;
+  font-weight: bolder;
+  text-align: center;
+}
+#message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 30%;
+  width: 40%;
+  border: 2px solid rgb(205, 33, 42);
+  background-color:  rgb(0, 140, 69);
+  line-height: 150%;
+  text-align: center;
+  color: white;
+}
+#message p {
+  margin: 1%;
+}

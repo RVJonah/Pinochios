@@ -1,0 +1,48 @@
+{% extends "orders/base.html" %}
+{% load static %}
+
+{% block title %}Pinochio's Subs and Pizza{% endblock %}
+
+{% block head%}
+<link rel="stylesheet" href="{% static 'orders/css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+<article>
+  <section id="restaurant">
+    <figure>
+      <img src="{% static 'orders/images/building3.jpg'%}" alt="image of restaurant">
+      <figcaption>Our Restaurant</figcaption>
+    </figure>
+  </section>
+  <section id="advert">
+    <p><em>Noch's</em> has reached a landmark this year......50 years in business! We've been feeding Harvard and the surrounding area since 1966!</p>
+    <p>We sell award-winning sicilian-style pizza and mouth-watering steak subs! We have over 500 reviews on Yelp--- check it out!</p>
+    <p>Pinocchio's was recently named 1st Runner-up in the 'Boston's Best Pizza Poll' conducted by Eater.com and Top College Pizza Shop by Thrillist.com. </p>
+    <p>Check out our mention on Suits!</p>
+    <div class="iframeDiv">
+      <iframe src="https://www.youtube.com/embed/hoM7PJu6V-E" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <p>....and on the Phantom Gourmet </p>
+    <div class="iframeDiv">
+      <iframe src="https://www.youtube.com/embed/TkABR72j7jU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li>
+        <b>Pinocchio's finally delivers! For catering orders over $100 call us directly.</b>
+      </li>
+      <li>We accept Mastercard, Visa and Amex and we offer Gift Certificates which you can pick up in person or we can mail them out to you.</li>
+      <li>We can take orders by phone at 617-876-4897 or by email 
+        <a href="mailto:pinocchiospizza1@gmail.com">pinocchiospizza1@gmail.com</a>
+      </li>
+      <li>
+        Find us on Twitter  @PinocchiosPizz and Instagram @pinocchiospizza1
+        <a href="https://twitter.com/PinocchiosPizz">Follow @PinocchiosPizz</a>
+      </li>
+</ul>
+  </section>
+</article>
+    {% endblock %}

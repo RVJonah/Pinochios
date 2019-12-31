@@ -1,0 +1,84 @@
+/* Element Tag CSS */
+
+body {
+  background-image: url("../images/agence-producteurs-locaux-damien-kuhn-PchFRvnivIM-unsplash.jpg");
+}
+button {
+    min-width: 50px;
+}
+caption {
+    text-align: right;
+}
+h2 {
+  margin-top: 2%;
+}
+h3 {
+  margin: 1% auto;
+  width: 70%;
+  text-align: center;
+}
+input[type="number"] {
+    width: 50px
+}
+input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+/* Class CSS */
+
+.content {
+  width: 70%;
+  padding: 0 5%;
+  background-color: rgb(255, 255, 255, 0.8);
+  border: 2px solid black;
+  text-align: center;
+}
+.table td {
+  width: 40%;
+}
+.table {
+  margin: 2% auto;
+  border: 2px solid black;
+}
+.addMessage {
+  display: none;
+  position: fixed;
+  top: 0;
+  right:35%;
+  width: 30%;
+  background-color: rgb(0, 140, 69);
+  border: 2px solid rgb(205, 33, 42);
+  color: white;
+  line-height: 300%;
+}
+.order {
+    min-width: 150px;
+}
+
+/* ID CSS */
+
+#pizzabase{
+  background-color: rgb(0, 140, 69);
+  color: white;
+}
+#pizzaDiv p{
+  text-align:justify;
+}
+#pizzaDiv p:last-of-type {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Media Query CSS */
+
+@media (max-width: 599px) {
+    .content {
+        width: 99%;
+    }
+    .order {
+      min-width: 50px;
+  }
+    .table td {
+        width: 20%;
+    }
+}

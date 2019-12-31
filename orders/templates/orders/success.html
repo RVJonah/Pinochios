@@ -1,0 +1,29 @@
+{% extends 'orders/base.html'%}
+{% load static %}
+
+{% block title %}Pinochio's Order Complete{% endblock %}
+
+{% block head %}
+    <script src="{% static 'orders/javascript/reset_cookies.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'orders/css/success.css' %}">
+{% endblock %}
+
+{% block body %}
+  <article class="content">
+    <h2>Your order has been completed</h2>
+    <p>Here is a list of your items and toppings</p>
+    <ul class="orderList">
+      {% for item in order %}
+        <li>
+          {{item.content_object}}
+          {{ item.item.base }} 
+          {{ item.item.item_name }} 
+          {{ item.content_type }}
+          {% if item.extras|length > 0%}
+            with {{ item.extras }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
+{% endblock %}

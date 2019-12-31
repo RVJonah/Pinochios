@@ -1,0 +1,57 @@
+{% extends 'orders/base.html'%}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block head %}
+<script src="{% static 'orders/javascript/update_user_orders.js' %}"></script>
+<link rel="stylesheet" href="{% static 'orders/css/my_orders.css' %}">
+{% endblock %}
+
+{% block body %}
+<article>
+  <section>
+    <h2>{% block subtitle %}{% endblock %}</h2>
+    <div id="linkDiv">
+      {% block link %}{% endblock %}
+    </div>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <th>Order number</th>
+        <th>Item</th>
+        <th>Extras</th>
+        <th>Completed</th>
+        <th>Date</th>
+      </thead>
+      <tbody>
+        {% if user_orders|length == 0 %}
+          <tr class="0">
+            <td id="noOrders" colspan="5">{% block empty %}{% endblock %}</td>
+          </tr>
+        {% else %}
+          {% for order in user_orders%}
+            <tr class="{{order.id}}">
+              <td>{{order.order_number}}</td>
+              <td>
+                {{order.item.item_name }} 
+                {{order.content_type}}
+              </td>
+              <td>{{order.extras}}</td>
+              <td id="{{order.id}}">
+                {%if order.completed == True%}
+                    Complete
+                {% else %}
+                    Pending
+                {% endif %}
+              </td>
+              <td>{{ order.date }}</td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+    {% block button %}{% endblock %}
+    <div id="message"></div>
+  </section>
+</article>
+{% endblock %}

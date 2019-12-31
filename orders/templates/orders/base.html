@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'orders/images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'orders/css/reset.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </script>
+    <link
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+      crossorigin="anonymous">
+    <script src="{% static 'orders/javascript/get_cookie.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'orders/css/base.css' %}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div></div><div>
+        <img src="{% static 'orders/images/pinocchio_72.gif' %}" alt="Pinocchio"/>
+        <h1>Pinocchio's Pizza &amp; Subs</h1>
+        <p>74 Winthrop Street</p>
+        <p>Harvard Square</p>
+        <p>617-876-4897</p>
+      </div><div></div>
+    </header>
+    <nav>
+      <ul>
+        <li id="home"><a href="{% url 'index' %}">Home</a></li
+        ><li id="order"><a href="{% url 'order' %}">Menu</a></li
+        ><li id="basket"><a href="{% url 'basket' %}"><img src="{% static 'orders/images/shopping-basket-hover.png' %}"></a></li
+        {% if staff == True %}
+         ><li id="orderList"><a href="{% url 'order_list' %}">Order List</a></li
+        {% endif %}
+        {% if logged_in %}
+          ><li id="logout"><a href="{% url 'logout' %}">Logout</a></li
+          ><li id="myOrders"><a href="{% url 'my_orders' %}">My Orders</a></li
+        {% else %}
+          ><li id="login"><a href="{% url 'login' %}">Login</a></li
+        {% endif %}
+          >
+      </ul>
+    </nav>
+    {% block body %}{% endblock %}
+  </body>
+  <footer>
+    <p>
+      Icons made by 
+      <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a>
+      and <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </p>
+  </footer>
+</html>

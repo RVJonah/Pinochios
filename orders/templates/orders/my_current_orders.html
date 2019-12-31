@@ -1,0 +1,19 @@
+{% extends 'orders/my_orders.html'%}
+{% load static %}
+
+{% block title %}My Current Orders{% endblock %}
+
+{% block subtitle %}My Current Orders{% endblock %}
+
+{% block link %}
+    <a href="{% url 'my_orders_history' %}">My Order History</a>
+{% endblock %}
+{% block empty %}
+  You have made no orders today
+{% endblock %}
+
+{% block button %}
+  <div class="buttonDiv">
+    <button type="button" id="refreshMyOrdersButton">Refresh</button>
+  </div>
+{% endblock %}

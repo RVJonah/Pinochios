@@ -1,0 +1,67 @@
+{% extends 'orders/base.html'%}
+{% load static %}
+
+{% block title %}Pinochio's Your Basket{% endblock %}
+
+{% block head %}
+  <script src="{% static 'orders/javascript/basket.js' %}"></script>
+  <script src="{% static 'orders/javascript/send_order.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'orders/css/basket.css' %}">
+{% endblock %}
+
+{% block body %}
+<article class="content">
+  <h2>Your Basket</h2>
+  <p class='comment'>Please check your order, choose your toppings and add any extras
+    {% if empty == True %}
+      <p class="empty">Your basket is empty</p>
+    {% endif %}
+  </p>
+  {% for item in order %}
+    {% for number_of_items in item.number %}
+    <div class="itemDiv" id="{{item.item_count}}">
+      <h3>{{item.item_data.base}} {{ item.item_data.item_name }} {{item.item_type}}</h3>
+      <p id="message"></p>
+      <form action="/ordered" method="POST" class="itemForm {{item.item_type}}" name="{{item.item_data.id}}">
+        {% csrf_token %}
+        {% if item.item_type == 'Pizza' and item.number_of_toppings|length > 0 %}
+          <legend>Please select your toppings:</legend>
+          {% for i in item.number_of_toppings %}
+            <label>Topping {{i}}: 
+              <select class="topping" name="topping{{i}}">
+                <option value="unselected" disabled selected>Select</option>
+                {% for topping in pizza_toppings %}
+                  <option value="{{topping.name}}" name="{{topping.name}}">
+                    {{topping.name}}
+                  </option>
+                {% endfor %}
+              </select>
+            </label>
+          {% endfor %}
+        {% endif %}
+        {% if item.item_type == 'Subs'%}
+          <legend>Please choose any extra fillings:</legend>
+          {% for topping in sub_toppings %}
+            <label>
+              Add {{topping.item_name}} $<span class="toppingPrice">{{topping.large_price}}</span>: 
+              <input type="checkbox" name="{{topping.item_name}}" class="checkbox">
+            </label>
+          {% endfor %}
+        {% endif %}
+      </form>
+      <p class="rightAlign">
+        Price: $<span class="price">{{item.price}}</span>
+      </p>
+      <div class="rightAlign">
+        <button type="button" class="deleteButton" id="deleteButton">Delete</button>
+      </div>
+    </div>
+    {% endfor %}
+  {% endfor %}
+  <p class="rightAlign totalp">Total = $<span id="total">{{total_price}}</p>
+  <div class="orderButtons">
+    <button type="reset" id="emptyButton">Delete All</button>
+    <button type="submit" id="orderButton">Send Order</button>
+  </div>
+</article>
+{% endblock %}

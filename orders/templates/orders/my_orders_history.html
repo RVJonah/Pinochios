@@ -1,0 +1,11 @@
+{% extends 'orders/my_orders.html'%}
+{% load static %}
+
+{% block title %}My Order History{% endblock %}
+
+{% block subtitle %}My Order History{% endblock %}
+{% block link %}
+    <a href="{% url 'my_orders' %}">Back to My Current Orders</a>
+{% endblock %}
+
+{% block empty %}You have made no orders yet{% endblock %}

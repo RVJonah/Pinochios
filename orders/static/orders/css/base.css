@@ -1,0 +1,119 @@
+/* Element Tag CSS */
+
+article {
+  margin: 2% auto;
+}
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+button {
+  color: white;
+  background-color: rgb(0, 140, 69);
+}
+button:hover{
+  background-color: rgb(205, 33, 42);
+}
+footer {
+  margin-top: 1%;
+  background-color: white;
+  font-size: 0.8rem;
+  text-align: right;
+  border-top: 2px solid black;
+}
+footer p {
+  padding-right: 1%;
+  margin: 0;
+}
+h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+header {
+  height: 20em;
+  width: 100%;
+  background-color: rgb(255,255,255, 0.6);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+header img {
+  float: right;
+  width: 15%; 
+}
+header div {
+  display: inline-block;
+  padding: 3% 1%;
+  width: 33.33%;
+  height: 100%;
+  margin-bottom: 2%;
+  background-color: white;
+}
+header div:first-of-type {
+  background-color: rgb(0, 140, 69);
+}
+header div:last-of-type {
+  background-color: rgb(205, 33, 42);
+}
+nav {
+  color: white;
+  background-color: rgb(255,255,255, 0.6);
+  border-bottom: 2px solid black;
+}
+nav ul {
+  padding: 1%;
+  margin: 0;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  border: 2px solid black;
+  width: 96px;
+  margin-left: 1%;
+}
+nav ul li:last-of-type {
+  float: right;
+  margin-right: 0.5%;
+}
+nav ul li a {
+  display: block;
+  width: 100%;
+  padding: 1%;
+  background-color:rgb(0, 140, 69);
+  color: white;
+  text-align: center;
+  line-height: 600%;
+  opacity: 1;
+}
+nav ul li a:visited {
+  color: white;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  background-color: rgb(205, 33, 42);
+}
+
+/* ID CSS */
+
+#basket img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#login, #logout {
+  margin-left: 1%;
+  float: right;
+}
+/* Media Query CSS */
+
+@media (max-width: 599px) {
+  nav ul {
+    padding: 2% 0;
+    margin: 2% 0 0 0;
+  }
+  nav ul li {
+    width: 70px;
+    margin: 0;
+    border: 1px solid black;
+  }
+}

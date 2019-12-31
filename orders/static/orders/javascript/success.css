@@ -1,0 +1,16 @@
+/* Element Tag CSS */
+
+h2 {
+  text-align: center;
+}
+
+/* Class CSS */
+
+.orderList {
+  margin-left: 30px;
+  list-style-type: circle;
+}
+.content {
+  width: 80%;
+  margin: 1% auto;
+}

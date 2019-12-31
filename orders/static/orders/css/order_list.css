@@ -1,0 +1,49 @@
+/* Element Tag CSS */
+
+button {
+  margin: 1%;
+}
+section {
+  width: 80%;
+  margin: 1% auto;
+}
+table {
+  margin: 1% auto;
+  text-align: center;
+}
+
+/* Class CSS */
+
+.buttonDiv {
+  text-align:center;
+}
+
+/* ID CSS */
+
+#message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 30%;
+  width: 40%;
+  border: 2px solid rgb(205, 33, 42);
+  background-color:  rgb(0, 140, 69);
+  line-height: 150%;
+  text-align: center;
+  color: white;
+}
+#message p {
+  margin: 1%;
+}
+#updateButton{
+  float: right;
+  margin-right: 2%;
+}
+
+/* Media Query CSS */
+
+@media (max-width: 599px) {
+  .orderedBy {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+/.vscode
+/env
+**/*.pyc
+**/__pycache__
+**/flask_session
+db.sqlite3

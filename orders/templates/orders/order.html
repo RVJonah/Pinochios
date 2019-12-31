@@ -1,0 +1,96 @@
+{% extends "orders/base.html" %}
+{% load static %}
+{% block title%}Pinochio's Subs and Pizza Menu{% endblock %}
+{% block head %}
+  <script src="{% static 'orders/javascript/order.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'orders/css/order.css' %}">
+{% endblock %}
+{% block body %}
+<article class="content">
+  <h2>Menu</h2>
+  <p class="addMessage">Item Added</p>
+  <aside id="pizzaDiv">
+    <h3>Regular Pizza</h3>
+    <p>
+      Our Regular pizza is a thin-crust or Neapolitan pizza. They come in small (12" in diameter) and large (16" in diameter). 
+      The small is suitable for 1 to 2 people while the large feeds 2 to 4 people.
+    </p>
+    <h3>Sicilian Pizza</h3>
+    <p>
+      Our Sicilian pizza is a deep-dish or thick-crust pizza. We sell them in a 9-slice or a 15-slice size.
+      The 9-slice size is 16" x 16" and will feed anywhere from 3 to 5 people.
+      The 15-slice size is 28" x 16", comes in 2 large pizza boxes and can feed 6 to 9 people.
+    </p>
+    <p>
+      We can make any of our pizzas in about 10 to 15 minutes, and they can be eaten in our dining room or taken out.
+      Oh, and always remember:
+    </p>
+    <p>
+      Eat More Pizza!
+    </p>
+  </aside>
+  {% for food in menu %}
+  {% if food.content.1.base == 'Sicilian '%}
+  {% else %}
+  <table class="table table-hover" id="{{food.title}}">
+    <thead class="thead-dark">
+      <th>{{food.title}}</th>
+      {% if food.content.0.small_price > 0 %}
+          <th>Small</th>
+          <th>Large</th>
+        {% else %}
+          <th> </th>
+          <th>Each</th>
+        {% endif %} 
+        <th class="order">Order</th>     
+    </thead>
+    <tbody>
+      {% for item in food.content %}
+        {% if item.extra %}
+
+        {% else%}
+          <tr>
+            <td>{{item.base}} {{ item.item_name }}</td>
+            {% if item.small_price > 0 %}
+              <td>
+                <label>${{ item.small_price }}
+                <input 
+                  type="checkbox"
+                  name="{{food.title}} {{item.id}} IsSmall"
+                  class="isSmall">
+                </label>
+              </td>
+              <td>
+            {% else %}
+              <td> </td>
+              <td>
+            {% endif %}
+              <label>
+                ${{ item.large_price }}
+                <input
+                type="checkbox"
+                name="{{food.title}} {{item.id}} IsLarge"
+                class="IsLarge">
+              </label>
+            </td>
+            <td class="order">
+              <input 
+                type="number" 
+                name ="{{food.title}} {{item.id}} Number">
+              <button 
+                type="button"
+                name ="{{food.title}} {{item.id}}"
+                class="addButton">Add</button>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+    {% if food.title == 'Pizza' %}
+      <caption>Special Pizza is any 5 toppings of your choice</caption>
+    {% endif %}
+  </table>
+  {% endif %}
+  {% endfor %}
+</article>
+{% endblock %}

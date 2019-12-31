@@ -1,0 +1,68 @@
+/* Element Tag CSS */
+
+button {
+  min-width: 100px;
+}
+label {
+  display: block;
+  margin: 1% 0;
+}
+h2 {
+  margin: 1% auto;
+  text-align: center;
+}
+h3 {
+  margin: 1% auto;
+}
+
+/* Class CSS */
+
+.comment {
+  text-align: center;
+  margin: 1% auto;
+}
+.deleteButton {
+  margin: 1% 0 1% auto;
+  width: 10%;
+}
+.empty {
+  margin: 1% auto;
+  font-weight: bolder;
+  text-align: center;
+}
+.itemDiv {
+  margin: 1% auto;
+  padding: 1%;
+  width: 80%;
+  border-top: 2px solid black;
+}
+.itemDiv:hover {
+  background-color: rgb(0, 70, 0, 0.6);
+}
+.orderButtons {
+  text-align: center;
+}
+.rightAlign, .toppingPrice { 
+  text-align: right;
+  font-weight: bold;
+}
+.totalp {
+  margin: 1% auto;
+  width: 80%;
+}
+
+/* ID CSS */
+
+#message {
+  display: none;
+  position: fixed;
+  top: 0;
+  right:35%;
+  padding: 1%;
+  width: 30%;
+  background-color: rgb(0, 140, 69);
+  border: 2px solid rgb(205, 33, 42);
+  text-align: center;
+  line-height: 300%;
+  color: white;
+}

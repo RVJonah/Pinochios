@@ -1,0 +1,29 @@
+{% extends "orders/base.html" %}
+{% load static %}
+
+{% block title %}Pinochio's Login{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'orders/css/login.css' %}">
+{% endblock %}
+
+{% block body %}
+<article>
+  <form id="loginForm" action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <div class="inputDiv">
+      <label for="username">Username: </label> <input type="username" title="Username" name="username" autocomplete="username">
+    </div>
+    <div class="inputDiv">
+      <label for="password">Password: </label> <input type="password" title="Password" name="password" autocomplete="current-password">
+    </div>
+    <div class="buttonDiv">
+      <button type="submit" id="loginButton">Login</button>
+    </div>
+  </form>
+  <div id="regLink">
+    <a href="{% url 'register' %}">Register</a>
+  </div>
+  <p id="comment"></p>
+</article>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'orders/base.html'%}
+{% load static %}
+
+{% block title %}Pinochio's Current Orders{% endblock %}
+
+{% block head %}
+<script src="{% static 'orders/javascript/refresh_order_list.js' %}"></script>
+<script src="{% static 'orders/javascript/update_order_list.js' %}"></script>
+<link rel="stylesheet" href="{% static 'orders/css/order_list.css' %}">
+{% endblock %}
+
+{% block body %}
+<article>
+  <section>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <th>Order number</th>
+        <th class="orderedBy">Ordered by</th>
+        <th>Item</th>
+        <th>Extras</th>
+        <th>Completed</th>
+        <th>Date</th>
+      </thead>
+      <tbody>
+        {% for order in orders%}
+          <tr class="{{order.id}}">
+            <td>{{order.order_number}}</td>
+            <td class="orderedBy">{{order.username}}</td>
+            <td>
+              {{order.item.item_name }} 
+              {{order.content_type}}
+            </td>
+            <td>{{order.extras}}</td>
+            <td id="{{order.id}}">
+              {%if order.completed == True%}
+                Complete
+              {% else %}
+                <input type="checkbox" class="complete">
+              {% endif %}
+            </td>
+            <td>{{ order.date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <button type="button" id="refreshOrderListButton">Refresh</button>
+    <button type="submit" id="updateButton">Complete Orders</button>
+    <div id="message"></div>
+  </section>
+</article>
+{% endblock %}
